@@ -47,6 +47,7 @@ CREATE TABLE {$this->getTable('logicbroker_vendor')}(vendor_id int not null auto
 SQLTEXT;
 
 $installer->run($sql);
+//Mage::getModel('compiler/process')->registerIncludePath(false);
 //demo 
 //Mage::getModel('core/url_rewrite')->setId(null);
 //demo 
