@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<layout version="0.1.0">
-    <logicbroker_adminhtml_logicbroker_index>
-        <reference name="content">
-            <block type="logicbroker/adminhtml_logicbroker" name="logicbroker" />
-        </reference>
-    </logicbroker_adminhtml_logicbroker_index>
-</layout>
