@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+	<config>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<logicbroker_integration translate="title" module="logicbroker">
+											<title>integration Section</title>
+											<sort_order>1</sort_order>
+										</logicbroker_integration>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+                
+                <menu>
+                    <logicbroker translate="title" module="logicbroker">
+                        <title>logicbroker</title>
+                        <sort_order>91</sort_order>
+                        <children>
+                            <suppliers translate="title">
+                                <title>Vendors</title>
+                                <action>logicbroker/adminhtml_logicbroker</action>
+                                <sort_order>10</sort_order>
+                            </suppliers>
+                            <integration translate="title">
+                                <title>Integration</title>
+                                <action>adminhtml/system_config/edit/section/logicbroker_integration</action>
+                                <sort_order>11</sort_order>
+                            </integration>
+                        </children>
+                    </logicbroker>
+                </menu>
+	</config>

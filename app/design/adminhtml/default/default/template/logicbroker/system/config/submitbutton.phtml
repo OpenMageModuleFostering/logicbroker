@@ -1,0 +1,125 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     default_default
+ * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+?>
+
+<?php /* var $this Mage_Adminhtml_Block_System_Config_System_Storage_Media_Synchronize */ ?>
+
+<script type="text/javascript">
+//<![CDATA[
+    Validation.addAllThese([
+		['validate-url-logicbroker', 'Please enter a valid URL. Protocol is required (http://, https:// )', function (v) {
+                v = (v || '').replace(/^\s+/, '').replace(/\s+$/, '');
+                return Validation.get('IsEmpty').test(v) || /^(http|https):\/\/(([A-Z0-9]([A-Z0-9_-]*[A-Z0-9]|))(\.[A-Z0-9]([A-Z0-9_-]*[A-Z0-9]|))*)(:(\d+))?(\/[A-Z0-9~](([A-Z0-9_~-]|\.)*[A-Z0-9~]|))*\/?(.*)?$/i.test(v)
+            }],
+    ['validate-ftp-url-logicbroker', 'Please enter a valid URL. Protocol is required (ftp://, ftps:// )', function (v) {
+                return Validation.get('IsEmpty').test(v) || /^(ftps|ftp):\/\/(([A-Z0-9][A-Z0-9_-]*)(\.[A-Z0-9][A-Z0-9_-]*)+.(com|org|net|dk|at|us|tv|info|uk|co.uk|biz|se)$)(:(\d+))?\/?/i.test(v) || /^(www)((\.[A-Z0-9][A-Z0-9_-]*)+.(com|org|net|dk|at|us|tv|info|uk|co.uk|biz|se)$)(:(\d+))?\/?/i.test(v)
+            }]
+    ]);
+    <?php if(!Mage::getStoreConfig('logicbroker_integration/integration/notificationstatus')) ?>
+      $('logicbroker_integration_integration_notificationstatus').value = '1';  
+        
+    $$('.form-buttons')[0].hide()
+    $('row_logicbroker_integration_integration_issubmitted').hide()
+    $('row_logicbroker_integration_integration_notificationstatus').hide()
+    $('row_logicbroker_integration_integration_dateofinstalltion').hide()
+    $$('.required-entry').each(function(items){
+        $('row_'+items.id).down(1).insert('<span class="required"> *</span>');
+
+            })
+    $('logicbroker_integration_integration_termsandcondition').up().insert({bottom:'&nbsp&nbspPlease see the <a href="<?php echo $this->getTermsAndConditionsUrl() ?>" target="_blank">Terms & Conditions</a>'});
+
+    $('logicbroker_integration_integration_need_help').href = '<?php echo $this->getHelpUrl() ?>';
+    $('logicbroker_integration_integration_need_help').target = '_blank';
+    $('logicbroker_integration_integration_need_help').insert('Contact Us');
+    //var testValidation = new varienForm('config_edit_form',true);
+    
+    function synchronize(id) {
+        
+        if(!configForm.validate())
+            {
+                return ;
+            }
+            
+        if(id == 'save_button')
+            {
+                $('savelater').value = '1';
+                 $$('.form-buttons')[0].show()
+                 $('logicbroker_integration_integration_issubmitted').value = '0';
+                    configForm.submit()
+                
+            }
+        
+
+        new Ajax.Request('<?php echo $this->getAjaxSyncUrl() ?>', {
+            parameters:      $('config_edit_form').serialize(),
+            method:     'post',
+            onSuccess:  successFunc,
+            onFailure:  failFunc
+        });
+
+     //   window.setTimeout('checkStatus()', 2011);
+
+       // disableStorageSelection();
+       // disableSyncButton();
+    }
+    
+    function successFunc(response){
+        
+      //var content = response.responseText;
+      //return alert(content);
+      var container = $('messages');
+    var content = response.responseText.evalJSON();
+    //container.update(content);
+    if(content.success)
+        {
+         container.update('<ul class="messages"><li class="success-msg"><ul><li><span>'+content.success+'</span></li></ul></li></ul>')
+         container.scrollTo()
+         $$('.form-buttons')[0].show()
+         $('logicbroker_integration_integration_issubmitted').value = '1';
+         configForm.submit()
+        }
+   if(content.error)
+        {
+         container.update('<ul class="messages"><li class="error-msg"><ul><li><span>'+content.error+'</span></li></ul></li></ul>')
+         container.scrollTo()
+         return;
+        }
+      
+    }
+    
+    function failFunc(){
+        alert('Not able to connect to server please try again later');
+    }
+//]]>
+</script>
+<?php echo $this->getSaveButtonHtml() ?><?php echo $this->getSubmitButtonHtml() ?><!--span class="sync-indicator no-display" id="sync_span"><img alt="Synchronize" style="margin:0 5px" src="<?php echo $this->getSkinUrl('images/process_spinner.gif') ?>"/><span id="sync_message_span"></span></span-->
+<!--p></p>
+<p><a href="<?php echo $this->getHelpUrl() ?>" target="_blank">Having Trouble?</a></p-->
+
+<?php if(Mage::getStoreConfig('logicbroker_integration/integration/issubmitted') == '0'): ?>
+<p><ul class="messages"><li class="error-msg"><ul><li><span><?php echo $this->__('You have unsubmitted changes.') ?></span></li></ul></li></ul></p>
+<?php endif; ?>
+<input type="hidden" id="savelater" name="savelater" value="0"/>

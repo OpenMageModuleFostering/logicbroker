@@ -1,0 +1,413 @@
+<?xml version="1.0"?>
+<config>
+  <tabs>
+    <logicbroker translate="label" module="logicbroker">
+      <label>logicbroker</label>
+      <sort_order>500</sort_order>
+    </logicbroker>
+  </tabs>
+  <sections>
+    <logicbroker_integration  translate="label" module="logicbroker">
+      <label>Integration</label>
+      <tab>logicbroker</tab>
+      <frontend_type>text</frontend_type>
+      <sort_order>40</sort_order>
+      <show_in_default>1</show_in_default>
+      <show_in_website>0</show_in_website>
+      <show_in_store>0</show_in_store>
+      <groups>
+        <integration translate="label">
+          <label>logicbroker - Integration</label>
+          <page_heading>Vendors</page_heading>
+          <expanded>1</expanded>
+          <frontend_type>text</frontend_type>
+          <sort_order>10</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>0</show_in_website>
+          <show_in_store>0</show_in_store>
+            <fields>
+                
+                <issubmitted translate="label">
+                <frontend_type>hidden</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>0</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </issubmitted>
+               
+               <notificationstatus translate="label">
+                <frontend_type>hidden</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>0</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </notificationstatus>
+               
+               <dateofinstalltion translate="label">
+                <frontend_type>hidden</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>0</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </dateofinstalltion>
+                
+                <firstname translate="label">
+                <label>First Name</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>0</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </firstname>
+               
+                <lastname translate="label">
+                <label>Last Name</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>1</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </lastname>
+               
+               <title translate="label">
+                <label>Title</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>2</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </title>
+               
+               <email translate="label">
+                <label>Email</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>3</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry validate-email</validate>
+               </email>
+               
+               <direct_phone translate="label">
+                <label>Direct Phone</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>4</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </direct_phone>
+               
+               <logicbroker_company_id translate="label">
+                <label>logicbroker Company ID</label>
+                <frontend_type>text</frontend_type>
+                <comment>From the logicbroker portal - optional if you do not have an account</comment>
+                <sort_order>5</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </logicbroker_company_id>
+               
+               <company_name translate="label">
+                <label>Company Name</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>6</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </company_name>
+               
+               <company_address_1 translate="label">
+                <label>Address 1</label>
+                <frontend_type>text</frontend_type>
+                <validate>required-entry</validate>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>7</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </company_address_1>
+               
+               <company_address_2 translate="label">
+                <label>Address 2</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>8</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </company_address_2>
+               
+               <company_city translate="label">
+                <label>City</label>
+                <frontend_type>text</frontend_type>
+                <validate>required-entry</validate>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>9</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </company_city>
+               
+               <company_state translate="label">
+                <label>State</label>
+                <frontend_type>text</frontend_type>
+                <validate>required-entry</validate>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>10</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </company_state>
+               
+               <company_zip translate="label">
+                <label>Zip</label>
+                <frontend_type>text</frontend_type>
+                <validate>required-entry validate-digits</validate>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>11</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </company_zip>
+               
+               <company_country translate="label">
+                <label>Country</label>
+                <frontend_type>select</frontend_type>
+                <validate>required-entry</validate>
+                <source_model>adminhtml/system_config_source_Country</source_model>
+                <sort_order>12</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </company_country>
+               
+               <company_website translate="label">
+                <label>Company Website</label>
+                <frontend_type>text</frontend_type>
+                <validate>validate-url-logicbroker</validate>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>13</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </company_website>
+               
+               <order_per_day translate="label">
+                <label>Orders Per Day</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>14</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </order_per_day>
+               
+               <erp_system translate="label">
+                <label>ERP System</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>15</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </erp_system>
+               
+               <notes translate="label">
+                <label>Notes</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>16</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </notes>
+               
+               <edi_qualifier translate="label">
+                <label>EDI Qualifier</label>
+                <frontend_type>select</frontend_type>
+                <source_model>logicbroker/system_config_source_ediqualifier</source_model>
+                <sort_order>17</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </edi_qualifier>
+               
+               <edi_purchase_identifier translate="label">
+                <label>EDI Identifier</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>18</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+               </edi_purchase_identifier>
+               
+               <supplier_attribute translate="label">
+                <label>Vendor Attribute</label>
+                <frontend_type>select</frontend_type>
+                <comment>Attribute code for attribute that will store the product vendor information for fulfillment. This attribute must be present on every product to be fulfilled by logicbroker.You can update/add/delete attribute by navigating to "Catalog->Attributes->Manage Attributes"</comment>
+                <source_model>logicbroker/system_config_source_attributecodes</source_model>
+                <sort_order>19</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </supplier_attribute>
+               
+               <stores translate="label">
+                <label>Stores</label>
+                <frontend_type>multiselect</frontend_type>
+                <source_model>adminhtml/system_config_source_store</source_model>
+                <sort_order>20</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </stores>
+               
+               <logic_broker_username translate="label">
+                <label>Magento Admin Username For logicbroker</label>
+                <frontend_type>text</frontend_type>
+                <!--source_model>adminhtml/system_config_source_text</source_model-->
+                <sort_order>21</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </logic_broker_username>
+               
+               <logic_broker_password translate="label">
+                <label>Magento Admin Password For logicbroker</label>
+                <frontend_type>Password</frontend_type>
+                <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                <sort_order>22</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </logic_broker_password>
+               
+               <your_production_store_url translate="label">
+                <label>Production Webservice URL</label>
+                <frontend_type>text</frontend_type>
+                <sort_order>23</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <!--comment>Please append "/" at end of the URL</comment-->
+                <validate>required-entry validate-url-logicbroker</validate>
+               </your_production_store_url>
+               
+               <your_staging_store_url translate="label">
+                <label>Staging Webservice URL</label>
+                <frontend_type>text</frontend_type>
+                <sort_order>24</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <!--comment>Please append "/" at end of the URL</comment-->
+                <validate>required-entry validate-url-logicbroker</validate>
+               </your_staging_store_url>
+               
+               <api_user_name translate="label">
+                <label>Webservice Username</label>
+                <frontend_type>text</frontend_type>
+                <sort_order>25</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </api_user_name>
+               
+               <api_password translate="label">
+                <label>Webservice Password</label>
+                <frontend_type>Password</frontend_type>
+                <backend_model>adminhtml/system_config_backend_encrypted</backend_model>
+                <sort_order>26</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry</validate>
+               </api_password>
+               
+               <processing_status translate="label">
+                <label>Processing Status</label>
+                <comment>Status can be check by navigating to "System->Order Statuses</comment>
+                <frontend_type>text</frontend_type>
+                <sort_order>27</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry validate-data</validate>
+               </processing_status>
+               
+               <error_status translate="label">
+                <comment>Status can be check by navigating to "System->Order Statuses</comment>
+                <label>Error Status</label>
+                <frontend_type>text</frontend_type>
+                <sort_order>28</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry validate-data</validate>
+               </error_status>
+               
+               <sentto_warehouse_status translate="label">
+                <comment>Status can be check by navigating to "System->Order Statuses</comment>
+                <label>Sent To Vendor Status</label>
+                <frontend_type>text</frontend_type>
+                <sort_order>29</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>required-entry validate-data</validate>
+               </sentto_warehouse_status>
+               
+               <termsandcondition translate="label">
+                <label>Accept Terms And Conditions</label>
+                <frontend_type>checkbox</frontend_type>
+                <sort_order>30</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>0</show_in_website>
+                <show_in_store>0</show_in_store>
+                <validate>validate-one-required-by-name</validate>
+               </termsandcondition>
+                <need_help translate="label comment">
+                            <label>Need Help?</label>
+                            <text>Contact Us</text>
+                            <frontend_type>link</frontend_type>
+                            <sort_order>31</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+               </need_help>
+               <submit_button translate="label comment">
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>logicbroker/adminhtml_system_config_submitbutton</frontend_model>
+                            <sort_order>32</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>0</show_in_website>
+                            <show_in_store>0</show_in_store>
+               </submit_button>
+              
+               
+            </fields>
+        </integration>
+      </groups>
+    </logicbroker_integration>
+  </sections>
+</config>
