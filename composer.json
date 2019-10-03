@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/logicbroker",
+    "name": "OpenMageModuleFostering\/logicbroker",
     "type": "magento-module",
     "license": "Customer-License",
     "homepage": "",
     "description": "Leverage Magento to achieve EDI compliance with big box retailers and trading partners. ",
     "authors": [
-    {
-        "name": "Logicbroker",
-        "email": "magentoext@logicbroker.com"
-    }
-],
+        {
+            "name": "Logicbroker",
+            "email": "magentoext@logicbroker.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
